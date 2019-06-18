@@ -7,13 +7,13 @@ use CommonBundle\Entity\Product\Product;
 class Delivery
 {
     /** @var int $id */
-    public $id;
+    private $id;
 
     /** @var string $address */
-    public $address;
+    private $address;
 
     /** @var Product[] */
-    public $products;
+    private $products;
 
     /**
      * @return int
