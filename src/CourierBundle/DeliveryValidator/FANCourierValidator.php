@@ -35,9 +35,9 @@ class FANCourierValidator
                 throw new DeliveryNotSupported();
             }
 
-            $dimmensions = [$product->length, $product->width, $product->height];
-            rsort($dimmensions);
-            list($length, $width, $height) = $dimmensions;
+            $dimensions = [$product->length, $product->width, $product->height];
+            rsort($dimensions);
+            list($length, $width, $height) = $dimensions;
             if ($length > self::MAX_PRODUCT_LENGTH) {
                 throw new DeliveryNotSupported();
             }
