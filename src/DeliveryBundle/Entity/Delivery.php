@@ -20,7 +20,6 @@ class Delivery
     private $products;
 
     /**
-     * @return int
      * @param mixed $id
      * @return Delivery
      */
