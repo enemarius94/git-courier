@@ -12,6 +12,18 @@ class CargusCourierValidator
     const MAX_PRODUCT_LENGTH = 2000;
     const MAX_DELIVERY_VOLUME = 1000000000;
 
+    /** @var ProductValidator */
+    private $productValidator;
+
+    /**
+     * CargusCourierValidator constructor.
+     * @param ProductValidator $productValidator
+     */
+    public function __construct(ProductValidator $productValidator)
+    {
+        $this->productValidator = $productValidator;
+    }
+
     public function supportsDelivery(Delivery $delivery)
     {
         $maxLength = 0;
@@ -19,29 +31,16 @@ class CargusCourierValidator
         $maxHeight = 0;
 
         foreach ($delivery->products as $product) {
-            if ($product->type !== Product::DRY) {
-                throw new DeliveryNotSupported();
-            }
+            $this->productValidator->validateProductType($product, Product::DRY);
+            $this->productValidator->validateProductWeight($product, self::MAX_WEIGHT);
+            $this->productValidator->validateProductDimensions($product, self::MAX_PRODUCT_LENGTH);
 
-            if ($product->weight > self::MAX_WEIGHT) {
-                throw new DeliveryNotSupported();
-            }
-
-            $dimmensions = [$product->length, $product->width, $product->height];
-            rsort($dimmensions);
-            list($length, $width, $height) = $dimmensions;
-            if ($length > self::MAX_PRODUCT_LENGTH) {
-                throw new DeliveryNotSupported();
-            }
-
-            $maxLength = max($maxLength, $length);
-            $maxWidth = max($maxWidth, $width);
-            $maxHeight += $height;
+            $maxLength = max($maxLength, $product->length);
+            $maxWidth = max($maxWidth, $product->width);
+            $maxHeight += $product->height;
         }
 
         $totalVolume = $maxLength*$maxWidth*$maxHeight;
-        if ($totalVolume > self::MAX_DELIVERY_VOLUME) {
-            throw new DeliveryNotSupported();
-        }
+        $this->productValidator->validateProductsVolume($totalVolume, self::MAX_DELIVERY_VOLUME);
     }
 }
