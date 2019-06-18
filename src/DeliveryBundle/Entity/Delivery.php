@@ -4,6 +4,10 @@ namespace DeliveryBundle\Entity;
 
 use CommonBundle\Entity\Product\Product;
 
+/**
+ * Class Delivery
+ * @package DeliveryBundle\Entity
+ */
 class Delivery
 {
     /** @var int $id */
@@ -17,14 +21,7 @@ class Delivery
 
     /**
      * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param int $id
+     * @param mixed $id
      * @return Delivery
      */
     public function setId($id)
@@ -32,7 +29,6 @@ class Delivery
         $this->id = $id;
         return $this;
     }
-
     /**
      * @return string
      */
@@ -42,7 +38,7 @@ class Delivery
     }
 
     /**
-     * @param string $address
+     * @param mixed $address
      * @return Delivery
      */
     public function setAddress($address)
