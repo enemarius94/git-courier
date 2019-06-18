@@ -10,28 +10,17 @@ use CommonBundle\Entity\Product\Product;
  */
 class Delivery
 {
-    /**
-     * @var int
-     */
-    public $id;
+    /** @var int $id */
+    private $id;
 
-    /**
-     * @var string
-     */
-    public $address;
+    /** @var string $address */
+    private $address;
 
     /** @var Product[] */
-    public $products;
+    private $products;
 
     /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
+     * @return int
      * @param mixed $id
      * @return Delivery
      */
@@ -41,7 +30,7 @@ class Delivery
         return $this;
     }
     /**
-     * @return mixed
+     * @return string
      */
     public function getAddress()
     {
