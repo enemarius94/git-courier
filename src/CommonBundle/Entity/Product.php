@@ -14,7 +14,7 @@ class Product
     private $name;
 
     private $category;
-
+  
     private $length;
     private $width;
     private $height;
@@ -163,5 +163,4 @@ class Product
         $this->weight = $weight;
         return $this;
     }
-
 }
