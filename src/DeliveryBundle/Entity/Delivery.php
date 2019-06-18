@@ -40,7 +40,6 @@ class Delivery
         $this->id = $id;
         return $this;
     }
-
     /**
      * @return mixed
      */
