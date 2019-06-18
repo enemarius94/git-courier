@@ -6,12 +6,20 @@ use CommonBundle\Entity\Product\Product;
 use CourierBundle\DeliveryValidator\Exception\DeliveryNotSupported;
 use DeliveryBundle\Entity\Delivery;
 
+/**
+ * Class FANCourierValidator
+ * @package CourierBundle\DeliveryValidator
+ */
 class FANCourierValidator
 {
     const MAX_WEIGHT = 40000;
     const MAX_PRODUCT_LENGTH = 2000;
     const MAX_DELIVERY_VOLUME = 1000000000;
 
+    /**
+     * @param Delivery $delivery
+     * @throws DeliveryNotSupported
+     */
     public function supportsDelivery(Delivery $delivery)
     {
         $maxLength = 0;
@@ -27,9 +35,9 @@ class FANCourierValidator
                 throw new DeliveryNotSupported();
             }
 
-            $dimmensions = [$product->length, $product->width, $product->height];
-            rsort($dimmensions);
-            list($length, $width, $height) = $dimmensions;
+            $dimensions = [$product->length, $product->width, $product->height];
+            rsort($dimensions);
+            list($length, $width, $height) = $dimensions;
             if ($length > self::MAX_PRODUCT_LENGTH) {
                 throw new DeliveryNotSupported();
             }
