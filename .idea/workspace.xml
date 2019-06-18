@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+
       <change beforePath="$PROJECT_DIR$/src/CourierBundle/DeliveryValidator/FANCourierValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/CourierBundle/DeliveryValidator/FANCourierValidator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DeliveryBundle/Entity/Delivery.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DeliveryBundle/Entity/Delivery.php" afterDir="false" />
     </list>
@@ -16,12 +17,15 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CourierBundle/DeliveryValidator/FANCourierValidator.php">
-          <provider selected="true" editor-type-id="text-editor">
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/CourierBundle/DeliveryValidator/FANCourierValidator.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -38,8 +42,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/CourierBundle/DeliveryValidator/FANCourierValidator.php" />
-        <option value="$PROJECT_DIR$/src/DeliveryBundle/Entity/Delivery.php" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -79,7 +81,6 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -109,10 +110,12 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+
         </state>
       </provider>
     </entry>
