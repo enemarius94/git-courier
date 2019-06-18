@@ -14,7 +14,7 @@ class Product
     private $name;
 
     private $category;
-
+  
     private $length;
     private $width;
     private $height;

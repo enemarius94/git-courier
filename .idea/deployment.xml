@@ -2,7 +2,6 @@
 <project version="4">
   <component name="PublishConfigData">
     <serverData>
-      <paths name="reversal-ui_app">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
