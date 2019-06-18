@@ -26,16 +26,16 @@ class FANCourierValidator
         $maxWidth = 0;
         $maxHeight = 0;
 
-        foreach ($delivery->products as $product) {
-            if ($product->type !== Product::DRY) {
+        foreach ($delivery->getProducts() as $product) {
+            if ($product->getType() !== Product::DRY) {
                 throw new DeliveryNotSupported();
             }
 
-            if ($product->weight > self::MAX_WEIGHT) {
+            if ($product->getWeight() > self::MAX_WEIGHT) {
                 throw new DeliveryNotSupported();
             }
 
-            $dimensions = [$product->length, $product->width, $product->height];
+            $dimensions = [$product->getLength(), $product->getWeight(), $product->getHeight()];
             rsort($dimensions);
             list($length, $width, $height) = $dimensions;
             if ($length > self::MAX_PRODUCT_LENGTH) {
